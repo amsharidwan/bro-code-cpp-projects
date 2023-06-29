@@ -3,22 +3,22 @@
 
 int main() 
 {
-    // double x = 3;
-    // double x = 3.14;
-    double x = 3.99;
-    double y = 4;
-    double z;
+    double a;
+    double b;
+    double c;
 
-    // z = std::max(x, y);
-    // z = std::min(x, y);
-    // z = pow(2, 4);
-    // z = sqrt(9);
-    // z = abs(-3);
-    // z = round(x);
-    // z = ceil(x);
-    z = floor(x);
+    std::cout << "Enter side A: ";
+    std::cin >> a;
 
-    std::cout << z;
+    std::cout << "Enter side B: ";
+    std::cin >> b;
+
+    // a = pow(a, 2);
+    // b = pow(b, 2);
+    // c = sqrt(a + b);
+    c = sqrt(pow(a, 2) + pow(b, 2));
+
+    std::cout << "Side C: " << c;
 
     return 0;
 }
