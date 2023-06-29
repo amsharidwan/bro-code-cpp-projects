@@ -2,33 +2,21 @@
 
 int main() {
 
-    // arithmetic operators = return the result of a specific
-    //                        arithmetic operation (+ - * /)
-    //                        parenthesis
-    //                        multiplication & division
-    //                        addition & subtraction
+    // type conversion = conversion a value of one data type to another
+    //                 Implicit = automatic
+    //                 Explicit = Precede value with new data type (int)
 
-    // int students = 20;
+    // double x = (int)3.14;
+    // std::cout << x;
 
-    // students = students + 1;
-    // students += 1;
-    // students++;
+    // char x = 100;
+    // std::cout << x;
 
-    // students = students - 1;
-    // students -= 1;
-    // students--;
+    int correct = 8;
+    int questions = 10;
+    double score = correct / (double)questions * 100;
 
-    // students = students * 2;
-    // students *= 2;
-
-    // students = students / 2;
-    // students /= 2;
-
-    // int remainder = students % 2;
-
-    int students = 6 - (5 + 4) * 3 / 2;
-
-    std::cout << students;
+    std::cout << score << "%";
 
     return 0;
 }
