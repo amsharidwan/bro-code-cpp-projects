@@ -1,26 +1,34 @@
 #include <iostream>
-#include <vector>
-
-// typedef std::vector<std::pair<std::string, int>> pairlist_t
-// typedef std::string text_t;
-// typedef int number_t;
-using text_t = std::string;
-using number_t = int;
 
 int main() {
 
-    // typedef = reserved keyword used to create an additional name
-    //           (alias) for another data type.
-    //           New identifier for an existing type
-    //           Help with readability and reduce typos
-    //           Use when there is a clear benefit
-    //           Replaced with 'using' (work better w/ templates)
+    // arithmetic operators = return the result of a specific
+    //                        arithmetic operation (+ - * /)
+    //                        parenthesis
+    //                        multiplication & division
+    //                        addition & subtraction
 
-    text_t firstName = "Bro";
-    number_t age = 21;
+    // int students = 20;
 
-    std::cout << firstName << '\n';
-    std::cout << age << '\n';
+    // students = students + 1;
+    // students += 1;
+    // students++;
+
+    // students = students - 1;
+    // students -= 1;
+    // students--;
+
+    // students = students * 2;
+    // students *= 2;
+
+    // students = students / 2;
+    // students /= 2;
+
+    // int remainder = students % 2;
+
+    int students = 6 - (5 + 4) * 3 / 2;
+
+    std::cout << students;
 
     return 0;
 }
