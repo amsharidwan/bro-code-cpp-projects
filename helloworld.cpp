@@ -1,22 +1,27 @@
 #include <iostream>
 
-int main() {
+// cout << (insertion operator)
+// cin >> (extraction operator)
 
-    // type conversion = conversion a value of one data type to another
-    //                 Implicit = automatic
-    //                 Explicit = Precede value with new data type (int)
+int main() 
+{
+    std::string name;
+    int age;
 
-    // double x = (int)3.14;
-    // std::cout << x;
+    // std::cout << "What's your name?: ";
+    // std::cin >> name;
+    
+    // std::cout << "What's your full name?: ";
+    // std::getline(std::cin, name);
 
-    // char x = 100;
-    // std::cout << x;
+    std::cout << "What's your age?: ";
+    std::cin >> age;
 
-    int correct = 8;
-    int questions = 10;
-    double score = correct / (double)questions * 100;
+    std::cout << "What's your full name?: ";
+    std::getline(std::cin >> std::ws, name);
 
-    std::cout << score << "%";
+    std::cout << "Hello " << name << '\n';
+    std::cout << "You are " << age << " years old";
 
     return 0;
 }
