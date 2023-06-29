@@ -1,13 +1,17 @@
 #include <iostream>
 
+namespace first{
+    int x = 1;
+}
+namespace second{
+    int x = 2;
+}
 int main() {
-    // The const keyword specifies that a variable's value is constant
-    // tells the compiler to prevent anything from modifying it
-    // (read-only)
-    const double PI = 3.14159;
-    const int LIGHT_SPEED = 299792458;
-    const int WIDTH = 1920;
-    const int HEIGHT = 1080;
+
+    // Namespace = provides a solution for preventing name conflicts
+    //             in large projects. Each entity needs a unique name.
+    //             A namespace allows for identically named entities
+    //             as long as the namespaces are different.
 
     return 0;
 }
