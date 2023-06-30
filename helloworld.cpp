@@ -2,43 +2,34 @@
 
 int main() {
 
-    // && = check if two conditions are true
-    // || = check if at least one of two conditions is true
-    // !  = reverses the logical state of its operand
+    double temp;
+    char unit;
 
-    int temp;
-    bool sunny = false;
+    std::cout << "***** Temperature conversion *****\n";
+    std::cout << "F = Fahrenheit\n";
+    std::cout << "C = Celcius\n";
+    std::cout << "What unit would you like to convert to: ";
+    std::cin >> unit;
 
-    std::cout << "Enter the temperature: ";
-    std::cin >> temp;
+    if(unit == 'F' || unit == 'f'){
+        std::cout << "Enter the temperature in Celcius: ";
+        std::cin >> temp;
 
-    // if(temp > 0 && temp < 30){
-    //     std::cout << "The temperature is good!";
-    // }
-    // else{
-    //     std::cout << "The temperature is bad!";
-    // }
+        temp = (1.8 * temp) + 32.0;
+        std::cout << "Temperature is: " << temp << "F\n";
+    }
+    else if(unit == 'C' || unit == 'c'){
+        std::cout << "Enter the temperature in Fahrenheit: ";
+        std::cin >> temp;
 
-    if(temp <= 0 || temp >= 30){
-        std::cout << "The temperature is bad!\n";
+        temp = (temp - 32) / 1.8;
+        std::cout << "Temperature is: " << temp << "C\n";
     }
     else{
-        std::cout << "The temperature is good!\n";
+        std::cout << "Please enter in only C or F\n";
     }
 
-    // if(sunny){
-    //     std::cout << "It is sunny outside!";
-    // }
-    // else{
-    //     std::cout << "It is cloudy outside!";
-    // }
-
-    if(!sunny){
-        std::cout << "It is cloudy outside!";
-    }
-    else{
-        std::cout << "It is sunny outside!";
-    }
+    std::cout << "**********************************";
 
     return 0;
 }
