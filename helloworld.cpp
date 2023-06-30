@@ -2,45 +2,28 @@
 
 int main() {
 
-    char op;
-    double num1;
-    double num2;
-    double result;
+    // ternary operator ?: replacement to an if/else statement
+    // condition ? expression1 : expression 2;
 
-    std::cout << "*********** CALCULATOR ***********\n";
+    int grade = 75;
 
-    std::cout << "Enter either (+ - * /): ";
-    std::cin >> op;
+    // if(grade >= 60)
+    // {
+    //     std::cout << "You pass!";
+    // }
+    // else{
+    //     std::cout << "You fail!";
+    // }
 
-    std::cout << "Enter #1: ";
-    std::cin >> num1;
+    // grade >= 60 ? std::cout << "You pass!" : std::cout << "You fail!";
 
-    std::cout << "Enter #2: ";
-    std::cin >> num2;
+    // int number = 9;
+    // number % 2 ? std::cout << "ODD" : std::cout << "EVEN";
 
-    switch (op){
-    case '+':
-        result = num1 + num2;
-        std::cout << "result: " << result << '\n';
-        break;
-    case '-':
-        result = num1 - num2;
-        std::cout << "result: " << result << '\n';
-        break;
-    case '*':
-        result = num1 * num2;
-        std::cout << "result: " << result << '\n';
-        break;
-    case '/':
-        result = num1 / num2;
-        std::cout << "result: " << result << '\n';
-        break;
-    default:
-        std::cout << "That wasn't a valid response";
-        break;
-    }
+    bool hungry = true;
 
-    std::cout << "**********************************";
+    // hungry ? std::cout << "You are hungry" : std::cout << "You are full";
+    std::cout << (hungry ? "You are hungry" : "You are full");
 
     return 0;
 }
