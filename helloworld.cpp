@@ -2,28 +2,43 @@
 
 int main() {
 
-    // ternary operator ?: replacement to an if/else statement
-    // condition ? expression1 : expression 2;
+    // && = check if two conditions are true
+    // || = check if at least one of two conditions is true
+    // !  = reverses the logical state of its operand
 
-    int grade = 75;
+    int temp;
+    bool sunny = false;
 
-    // if(grade >= 60)
-    // {
-    //     std::cout << "You pass!";
+    std::cout << "Enter the temperature: ";
+    std::cin >> temp;
+
+    // if(temp > 0 && temp < 30){
+    //     std::cout << "The temperature is good!";
     // }
     // else{
-    //     std::cout << "You fail!";
+    //     std::cout << "The temperature is bad!";
     // }
 
-    // grade >= 60 ? std::cout << "You pass!" : std::cout << "You fail!";
+    if(temp <= 0 || temp >= 30){
+        std::cout << "The temperature is bad!\n";
+    }
+    else{
+        std::cout << "The temperature is good!\n";
+    }
 
-    // int number = 9;
-    // number % 2 ? std::cout << "ODD" : std::cout << "EVEN";
+    // if(sunny){
+    //     std::cout << "It is sunny outside!";
+    // }
+    // else{
+    //     std::cout << "It is cloudy outside!";
+    // }
 
-    bool hungry = true;
-
-    // hungry ? std::cout << "You are hungry" : std::cout << "You are full";
-    std::cout << (hungry ? "You are hungry" : "You are full");
+    if(!sunny){
+        std::cout << "It is cloudy outside!";
+    }
+    else{
+        std::cout << "It is sunny outside!";
+    }
 
     return 0;
 }
