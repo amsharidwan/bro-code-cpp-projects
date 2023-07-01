@@ -2,19 +2,17 @@
 
 int main() {
 
-    std::string name;
+    // do while loop = do some block of code first,
+    //                 THEN repeat again if condition is true
 
-    // if(name.empty()){
-    //     std::cout << "Enter your name: ";
-    //     std::getline(std::cin, name);
-    // }
+    int number;
 
-    while(name.empty()){
-        std::cout << "Enter your name: ";
-        std::getline(std::cin, name);
-    }
+    do{
+        std::cout << "Enter a positive #: ";
+        std::cin >> number;
+    } while (number < 0);
 
-    std::cout << "Hello " << name;
+    std::cout << "The # is: " << number;
 
     return 0;
 }
