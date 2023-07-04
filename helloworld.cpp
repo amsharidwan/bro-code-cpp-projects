@@ -2,12 +2,16 @@
 
 int main() {
 
-    for (int i = 10; i >= 0; i-=2)
-    {
+    // break = break out of a loop
+    // continue = skip current iteration
+
+    for (int i = 1; i <= 20; i++){
+        if(i == 13){
+            // break;
+            continue;
+        }
         std::cout << i << '\n';
     }
-    
-    std::cout << "HAPPY NEW YEAR!\n";
 
-    return 0;
+        return 0;
 }
