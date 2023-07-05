@@ -1,34 +1,23 @@
 #include <iostream>
-#include <ctime>
+
+void happyBirthday(std::string name, int age);
 
 int main() {
 
-    int num;
-    int guess;
-    int tries = 0;
+    // function = a block of reusable code
 
-    srand(time(NULL));
-    num = (rand() % 100) + 1;
+    std::string name = "Ridwan";
+    int age = 24;
 
-    std::cout << "****** NUMBER GUESSING GAME **50****\n";
-
-    do{
-        std::cout << "Enter a guess between (1-100): ";
-        std::cin >> guess;
-        tries++;
-
-        if(guess > num){
-            std::cout << "Too high!\n";
-        }
-        else if(guess < num){
-            std::cout << "Too low!\n";
-        }
-        else{
-            std::cout << "CORRECT! # of tries: " << tries << '\n';
-        }
-    }while(guess != num);
-
-    std::cout << "**********************************";
+    happyBirthday(name, age);
 
     return 0;
+}
+
+void happyBirthday(std::string name, int age){
+    std::cout << "Happy Birthday to " << name << '\n';
+    std::cout << "Happy Birthday to " << name << '\n';
+    std::cout << "Happy Birthday dear " << name << '\n';
+    std::cout << "Happy Birthday to " << name << '\n';
+    std::cout << "You are " << age << " years old\n";
 }
