@@ -1,86 +1,111 @@
 #include <iostream>
-#include <iomanip>
+#include <ctime>
 
-void showBalance(double balance);
-double deposit();
-double withdraw(double balance);
+char getUserChoice();
+char getComputerChoice();
+void showChoice(char choice);
+void chooseWinner(char player, char computer);
 
 int main() {
 
-    double balance = 0;
-    int choice = 0;
+    char player;
+    char computer;
 
-    do{
-        std::cout << "******************\n";
-        std::cout << "Enter your choice:\n";
-        std::cout << "******************\n";
-        std::cout << "1. Show Balance\n";
-        std::cout << "2. Deposit Money\n";
-        std::cout << "3. Withdraw Money\n";
-        std::cout << "4. Exit\n";
-        std::cin >> choice;
+    player = getUserChoice();
+    std::cout << "You choice: ";
+    showChoice(player);
 
-        std::cin.clear();
-        fflush(stdin);
+    computer = getComputerChoice();
+    std::cout << "Computer's choice: ";
+    showChoice(computer);
 
-        switch (choice)
-        {
-            case 1:
-                showBalance(balance);
-                break;
-            case 2:
-                balance += deposit();
-                showBalance(balance);
-                break;
-            case 3:
-                balance -= withdraw(balance);
-                showBalance(balance);
-                break;
-            case 4:
-                std::cout << "Thanks for visiting!\n";
-                break;
-            default:
-                std::cout << "Invalid choice\n";
-        }
-    } while (choice != 4);
+    chooseWinner(player, computer);
 
     return 0;
 }
 
-void showBalance(double balance){
-    std::cout << "Your balance is: $" << std::setprecision(2) << std::fixed << balance << '\n';
+char getUserChoice(){
+
+    char player;
+    std::cout << "Rock-Paper-Scissors Game!\n";
+
+    do{
+        std::cout << "Choose one of the following\n";
+        std::cout << "*************************\n";
+        std::cout << "'r' for rock\n";
+        std::cout << "'p' for paper\n";
+        std::cout << "'s' for scissors\n";
+        std::cin >> player;
+    } while (player != 'r' && player != 'p' && player != 's');
+
+    return player;
 }
-double deposit(){
+char getComputerChoice(){
 
-    double amount = 0;
+    srand(time(0));
+    int num = rand() % 3 + 1;
 
-    std::cout << "Enter amount to be deposited: ";
-    std::cin >> amount;
-
-    if(amount > 0){
-        return amount;
+    switch (num)
+    {
+    case 1:
+        return 'r';
+    case 2:
+        return 'p';
+    case 3:
+        return 's';
     }
-    else{
-        std::cout << "That's not a valid amount:\n";
-        return 0;
+    return 0;
+}
+void showChoice(char choice){
+
+    switch (choice)
+    {
+    case 'r':
+        std::cout << "Rock\n";
+        break;
+    case 'p':
+        std::cout << "Paper\n";
+        break;
+    case 's':
+        std::cout << "Scissors\n";
     }
 }
-double withdraw(double balance){
+void chooseWinner(char player, char computer){
 
-    double amount = 0;
-
-    std::cout << "Enter amount to be withdrawn: ";
-    std::cin >> amount;
-
-    if(amount > balance){
-        std::cout << "insufficient funds\n";
-        return 0;
-    }
-    else if(amount < 0){
-        std::cout << "That's not a valid amount\n";
-        return 0;
-    }
-    else{
-        return amount;
+    switch (player)
+    {
+    case 'r':
+        if(computer == 'r'){
+            std::cout << "It's a tie!\n";
+        }
+        else if(computer == 'p'){
+            std::cout << "You lose!\n";
+        }
+        else{
+            std::cout << "You win!\n";
+        }
+        break;
+    case 'p':
+        if(computer == 'r'){
+            std::cout << "You win!\n";
+        }
+        else if(computer == 'p'){
+            std::cout << "It's a tie!\n";
+        }
+        else{
+            std::cout << "You lose!\n";
+        }
+        break;
+    case 's':
+        if(computer == 'r'){
+            std::cout << "You lose!\n";
+        }
+        else if(computer == 'p'){
+            std::cout << "You win!\n";
+        }
+        else{
+            std::cout << "It's a tie!\n";
+        }
+        break;
     }
 }
